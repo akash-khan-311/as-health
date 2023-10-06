@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Yoga Retreat",
+    "image": "https://i.ibb.co/FHsKNVr/yoga.jpg",
+    "price": 199,
+    "description": "Join our rejuvenating Yoga Retreat and embark on a journey to inner peace and physical well-being. Immerse yourself in daily yoga and meditation sessions, surrounded by the serene beauty of nature. Reconnect with your body and soul. Discover a profound sense of relaxation as you listen to the gentle rustling of leaves and the sound of flowing water. In the mornings, start your day with guided meditation, setting your intentions for a day of mindfulness. Our experienced yoga instructors will lead you through a variety of yoga styles, suitable for all levels. Whether you're a beginner or an experienced yogi, you'll find classes that challenge and nurture your practice. Afternoons are yours to explore the natural surroundings, take a dip in the nearby stream, or simply unwind in a hammock with a good book. Evenings are filled with communal dinners, where you'll savor delicious, locally sourced meals that nourish your body and soul. Our retreat is more than just a vacation; it's an opportunity to deepen your connection to yourself and others. With like-minded participants, you'll form lasting friendships and support each other's wellness journeys. Take this time to disconnect from the stresses of daily life, and reconnect with your inner self. Our Yoga Retreat is a transformative experience that will leave you feeling refreshed, revitalized, and inspired to continue your wellness journey long after you return home.",
+    "button": "Register Now"
+  },
+  {
+    "id": 2,
+    "name": "Fitness Bootcamp",
+    "image": "https://i.ibb.co/qCTPtL5/fitness.webp",
+    "price": 149,
+    "description": "Get ready to sweat it out at our Fitness Bootcamp! Our expert trainers will push your limits with high-intensity workouts, strength training, and nutritional guidance. Achieve your fitness goals and transform your body. Our Fitness Bootcamp is not for the faint of heart. It's a rigorous, results-driven program designed to challenge you both physically and mentally. We believe in the power of discipline and hard work, and our experienced trainers are here to guide you every step of the way. Each day begins with a dynamic warm-up to prepare your body for the day's activities. Then, it's off to the races with intense cardio workouts, strength-building exercises, and agility drills. We'll push you to your limits, helping you break through plateaus and achieve new heights of fitness. Nutrition is a key component of our program. Our certified nutritionists will educate you on healthy eating habits, meal planning, and the importance of fueling your body for optimal performance. You'll leave our Fitness Bootcamp not only stronger and leaner but also armed with the knowledge and tools to maintain a healthy lifestyle long-term. In the evenings, unwind and recover with relaxing stretching sessions and massages. It's a balanced approach to fitness that leaves you feeling energized, accomplished, and ready to take on the world.",
+    "button": "Sign Up Today"
+  },
+  {
+    "id": 3,
+    "name": "Healthy Cooking Class",
+    "image": "https://i.ibb.co/pxzPGRZ/cooking.jpg",
+    "price": 50,
+    "description": "Learn the art of preparing delicious and nutritious meals in our Healthy Cooking Class. Discover recipes that promote wellness, using fresh ingredients and mindful cooking techniques. At our Healthy Cooking Class, we believe that food is medicine. What you eat has a profound impact on your overall well-being, and we're here to show you how to make nutritious and delicious meals that nourish your body and soul. Our experienced chefs will guide you through a variety of recipes that are not only tasty but also promote health and vitality. From vibrant salads to hearty soups and wholesome mains, you'll learn to prepare dishes that are as good for your taste buds as they are for your body. We'll introduce you to a world of fresh, seasonal ingredients, and teach you how to source and select the best produce. You'll discover the magic of herbs and spices, and how they can transform ordinary dishes into extraordinary culinary experiences. Our cooking classes are hands-on, allowing you to actively participate in the cooking process. You'll gain valuable skills and techniques that you can use in your own kitchen. And the best part? You get to savor your creations at the end of each class. It's a delightful journey of flavors and aromas that will leave you inspired to continue your culinary adventures at home. Whether you're a novice or a seasoned home cook, our Healthy Cooking Class is a fun and educational experience that will deepen your appreciation for good food and good health.",
+    "button": "Book Your Spot"
+  },
+  {
+    "id": 4,
+    "name": "Mindfulness Meditation Workshop",
+    "image": "https://i.ibb.co/6YR4FJj/Mindfulness.jpg",
+    "price": 75,
+    "description": "Join our Mindfulness Meditation Workshop and cultivate inner peace and mental clarity. Learn meditation techniques to reduce stress, anxiety, and improve overall well-being. In today's fast-paced world, finding moments of peace and tranquility can be a challenge. Our Mindfulness Meditation Workshop is designed to provide you with the tools and practices you need to navigate life's challenges with grace and calm. Guided by experienced meditation instructors, you'll embark on a journey of self-discovery and inner exploration. Each day of the workshop begins with gentle yoga and stretching exercises to prepare your body for meditation. You'll then move into guided meditation sessions that focus on different aspects of mindfulness. Learn to observe your thoughts without judgment, connect with your breath, and cultivate a deep sense of presence. Discover how mindfulness can help you reduce stress, manage anxiety, and improve your overall mental well-being. Our instructors will also introduce you to mindfulness practices that you can integrate into your daily life, whether you're at home, work, or anywhere in between. Throughout the workshop, you'll have the opportunity to engage in group discussions and share your experiences with fellow participants. It's a supportive and nurturing environment that encourages growth and self-awareness. By the end of the workshop, you'll have a toolbox of mindfulness techniques that you can use to find peace and balance in any situation. Join us on this transformative journey toward greater mental clarity and emotional well-being.",
+    "button": "Reserve Your Seat"
+  },
+  {
+    "id": 5,
+    "name": "Dance for Fitness",
+    "image": "https://i.ibb.co/d6tFntt/Dance.jpg",
+    "price": 80,
+    "description": "Dance your way to fitness in our Dance for Fitness class! Enjoy energetic dance routines that boost your cardiovascular health and tone your body. Have fun while staying active. Who says working out has to be boring? At our Dance for Fitness class, we believe that exercise should be fun and enjoyable. That's why we've combined the benefits of cardiovascular fitness with the joy of dance. Get ready to move and groove to infectious beats as you burn calories, tone muscles, and improve your overall fitness. Our experienced dance instructors will lead you through energetic routines that cater to all skill levels. Whether you're a seasoned dancer or have two left feet, our classes are designed to be inclusive and entertaining. You'll learn a variety of dance styles, from hip-hop to salsa, and even some trendy moves from the latest music videos. The music will be pumping, and the energy will be high as you sweat it out on the dance floor. Dancing not only improves your physical health but also boosts your mood and reduces stress. It's a full-body workout that leaves you feeling invigorated and ready to conquer the day. So, put on your dancing shoes and join us for a fitness class like no other!",
+    "button": "Join the Dance Party"
+  },
+  {
+    "id": 6,
+    "name": "Mediterranean Diet Workshop",
+    "image": "https://i.ibb.co/f2fTwmX/diet.jpg",
+    "price": 60,
+    "description": "Join our Mediterranean Diet Workshop and discover the secrets of one of the world's healthiest diets. Learn to prepare delicious Mediterranean dishes rich in flavor and nutrients. The Mediterranean diet is renowned for its health benefits, and we're here to show you how to incorporate it into your daily life. In this workshop, our skilled chefs will guide you through the art of Mediterranean cooking. You'll learn to use olive oil, fresh herbs, and an abundance of vegetables to create meals that are both delicious and heart-healthy. From Greek salads to Spanish paella, you'll explore a variety of dishes that capture the essence of Mediterranean cuisine. We'll also discuss the science behind the diet and its positive effects on heart health, weight management, and longevity. By the end of the workshop, you'll have a repertoire of Mediterranean recipes that you can enjoy with family and friends. It's a culinary journey that promotes well-being and indulgence in equal measure. Join us and savor the flavors of the Mediterranean!",
+    "button": "Enroll Now"
+  },
+  {
+    "id": 7,
+    "name": "Stress Management Seminar",
+    "image": "https://i.ibb.co/4WgR22g/seminar.jpg",
+    "price": 0,
+    "description": "In our Stress Management Seminar, we'll equip you with strategies to effectively manage stress and lead a balanced life. Stress is a common part of modern living, but it doesn't have to control your well-being. Join our seminar and gain insights into stress triggers, coping mechanisms, and relaxation techniques. Our experienced facilitators will guide you through mindfulness exercises, deep breathing, and time-management strategies. You'll learn to identify stressors in your life and develop a personalized stress management plan. This seminar is free of charge because we believe that everyone deserves the tools to live a stress-free life. Take the first step toward a calmer, healthier you.",
+    "button": "Attend for Free"
+  },
+  {
+    "id": 8,
+    "name": "Pilates for Core Strength",
+    "image": "https://i.ibb.co/gWd8mnm/Pilates.jpg",
+    "price": 75,
+    "description": "Strengthen your core and improve your posture with our Pilates for Core Strength program. Pilates is a low-impact exercise method that targets your abdominal muscles, back, and pelvis. It's an excellent way to build core strength and stability while enhancing flexibility. Our certified Pilates instructors will guide you through a series of exercises that focus on core engagement and proper alignment. You'll leave each session feeling taller, leaner, and more balanced. Whether you're new to Pilates or looking to deepen your practice, this program is suitable for all levels. Join us and discover the transformative power of Pilates for your overall well-being.",
+    "button": "Join Pilates Class"
+  },
+  {
+    "id": 9,
+    "name": "Holistic Wellness Retreat",
+    "image": "https://example.com/holistic-retreat.jpg",
+    "price": 299,
+    "description": "Experience holistic well-being at our Holistic Wellness Retreat. This immersive retreat is designed to nourish your mind, body, and spirit. During your stay, you'll engage in daily yoga and meditation sessions, indulge in organic and wholesome meals, and explore holistic healing practices such as acupuncture and Reiki. Our tranquil retreat center offers a serene escape from the demands of daily life, allowing you to reconnect with yourself and find inner balance. Immerse yourself in nature, practice mindfulness, and embrace the holistic approach to health and wellness. Our team of experienced practitioners will guide you on a journey of self-discovery and transformation. It's a retreat like no other, where you'll leave feeling renewed, revitalized, and in harmony with yourself and the world around you.",
+    "button": "Reserve Your Retreat"
+  }
+]
