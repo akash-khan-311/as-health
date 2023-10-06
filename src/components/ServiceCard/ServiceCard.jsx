@@ -1,25 +1,22 @@
 import React from "react";
 import AOS from "aos";
-import "aos/dist/aos.css"; 
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { BiRightArrowAlt } from "react-icons/bi";
 // ..
 AOS.init();
 const ServiceCard = ({ service }) => {
-  const { name, image, price, description, button } = service;
+  const { name, image, id, price, description, button } = service;
   return (
-    <Link to={"/service"}>
+    <Link to={`/service/${id}`}>
       <div
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        class="relative flex h-full flex-col rounded-xl backdrop-blur-sm bg-white/20 bg-clip-border text-gray-700 shadow-md"
+        class="relative flex h-full flex-col rounded-xl backdrop-blur-sm bg-white/20 bg-clip-border  shadow-md"
       >
-        <div class="relative m-0 overflow-hidden rounded-lg bg-transparent bg-clip-border text-gray-700 shadow-none">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1471&amp;q=80"
-            alt="ui/ux review check"
-          />
+        <div class="relative m-0 overflow-hidden rounded-lg bg-transparent h-56 bg-clip-border 0 shadow-none">
+          <img src={image} alt={name} />
         </div>
         <div class="p-6">
           <h4 class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-white antialiased">
@@ -30,14 +27,18 @@ const ServiceCard = ({ service }) => {
               ? description
               : `${description.slice(0, 200)} ....`}
           </p>
+          <div className="mt-5">
+            <p className="text-xl font-semibold text-white">Price: ${price}</p>
+          </div>
         </div>
+
         <div class="flex items-center justify-between p-6">
           <div class="flex items-center ">
             <div
               data-tooltip="author-2"
               class="absolute z-50 whitespace-normal break-words rounded-lg py-1.5  font-sans  font-normal text-white flex"
             >
-              <button className="flex items-center">
+              <button className="flex items-center text-xl ease-in-out ">
                 {button}
                 <BiRightArrowAlt className="text-2xl ml-3 " />
               </button>

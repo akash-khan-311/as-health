@@ -43,10 +43,11 @@ const NavManu = () => {
       <div className=" container mx-auto flex items-center justify-between">
         <Typography
           as="a"
-          href="#"
           className="mr-4 cursor-pointer py-1.5 font-bold font-custom text-4xl"
         >
-          <span className="text-color">AS</span> Event
+          <Link to={"/"}>
+            <span className="text-color">AS</span> Event
+          </Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
         <Button variant="gradient" size="sm" className="hidden lg:inline-block">
