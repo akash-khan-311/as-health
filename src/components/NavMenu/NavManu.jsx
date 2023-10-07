@@ -27,7 +27,7 @@ const NavManu = () => {
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
         <NavLink to={"/pricing"} className="flex items-center nav">
-         Pricing
+          Pricing
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
@@ -56,7 +56,7 @@ const NavManu = () => {
           className="mr-4 cursor-pointer py-1.5 font-bold font-custom text-4xl"
         >
           <Link to={"/"}>
-            <span className="text-color">AS</span> Health 
+            <span className="text-color">AS</span> Health
           </Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
@@ -111,7 +111,10 @@ const NavManu = () => {
         <div className="container mx-auto">
           {navList}
           <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
+            <Link to={"/login"}>Login</Link>
+          </Button>
+          <Button variant="gradient" size="sm" fullWidth className="mb-2">
+           <Link to={'/register'}>Register</Link>
           </Button>
         </div>
       </MobileNav>

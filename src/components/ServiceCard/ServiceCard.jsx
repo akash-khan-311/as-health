@@ -39,7 +39,7 @@ const ServiceCard = ({ service }) => {
               class="absolute z-50 whitespace-normal break-words rounded-lg py-1.5  font-sans  font-normal text-white flex"
             >
               <button className="flex items-center text-xl ease-in-out ">
-                {button}
+                View Details
                 <BiRightArrowAlt className="text-2xl ml-3 " />
               </button>
             </div>
