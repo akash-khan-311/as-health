@@ -1,0 +1,36 @@
+[
+  {
+    "package_name": "Standard",
+    "price_per_month": 30,
+    "benefits": [
+      "Access to all workshops and sessions",
+      "Health screenings and consultations",
+      "Vendor discounts"
+    ]
+  },
+  {
+    "package_name": "Premium",
+    "price_per_month": 50,
+    "benefits": [
+      "Access to all workshops and sessions",
+      "Health screenings and consultations",
+      "Vendor discounts",
+      "Networking opportunities",
+      "Fitness class access"
+    ]
+  },
+  {
+    "package_name": "VIP",
+    "price_per_month": 80,
+    "benefits": [
+      "Access to all workshops and sessions",
+      "Health screenings and consultations",
+      "Vendor discounts",
+      "Networking opportunities",
+      "Fitness class access",
+      "Healthy snacks and refreshments",
+      "Exclusive event merchandise",
+      "Wellness toolkit"
+    ]
+  }
+]
