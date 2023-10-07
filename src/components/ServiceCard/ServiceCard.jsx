@@ -3,12 +3,14 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { BiRightArrowAlt } from "react-icons/bi";
+
 // ..
 AOS.init();
 const ServiceCard = ({ service }) => {
-  const { name, image, id, price, description, button } = service;
+  const { name, image, id, price, description } = service;
   return (
     <Link to={`/service/${id}`}>
+        
       <div
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"

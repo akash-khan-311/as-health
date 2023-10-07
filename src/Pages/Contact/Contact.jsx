@@ -1,10 +1,14 @@
 import React from "react";
 import NavManu from "../../components/NavMenu/NavManu";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   return (
     <div>
       <NavManu />
+      <Helmet>
+        <title>Contact</title>
+      </Helmet>
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto flex  flex-col-reverse lg:flex-row overflow-hidden md:space-y-5">
           <div

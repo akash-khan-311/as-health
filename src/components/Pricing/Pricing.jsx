@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PricingCard from "../PricingCard/PricingCard";
 import NavManu from "../NavMenu/NavManu";
+import { Helmet } from "react-helmet";
+
 
 const Pricing = () => {
   const [pricings, setPricings] = useState([]);
@@ -9,8 +11,12 @@ const Pricing = () => {
       .then((res) => res.json())
       .then((data) => setPricings(data));
   }, []);
+
   return (
     <div>
+      <Helmet>
+        <title>Pricing</title>
+      </Helmet>
       <NavManu />
       <div className="container mx-auto">
         <div className="">

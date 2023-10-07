@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import NavManu from "../../components/NavMenu/NavManu";
+import { Helmet } from 'react-helmet';
 
 const ServiceDetails = () => {
   const [currentService, setCurrentService] = useState(null);
@@ -15,6 +16,9 @@ const ServiceDetails = () => {
   return (
     <div>
       <NavManu />
+      <Helmet>
+        <title>{currentService?.name}</title>
+      </Helmet>
       <div className="container mx-auto backdrop-blur-md bg-white/30 my-10">
         <div
           data-aos="flip-right"

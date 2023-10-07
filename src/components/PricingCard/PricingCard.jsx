@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import toast, { Toaster } from "react-hot-toast";
 function CheckIcon() {
   return (
     <svg
@@ -28,6 +29,9 @@ function CheckIcon() {
 
 const PricingCard = ({ pricing }) => {
   const { package_name, price_per_month, benefits } = pricing;
+  const handleBookNow = () => {
+    toast.success("Well Done!,");
+  };
   return (
     <Card
       data-aos="flip-left"
@@ -37,6 +41,7 @@ const PricingCard = ({ pricing }) => {
       color="gray"
       className="w-full p-8 backdrop-blur-sm bg-white/5"
     >
+      
       <CardHeader
         floated={false}
         shadow={false}
@@ -74,13 +79,14 @@ const PricingCard = ({ pricing }) => {
       </CardBody>
       <CardFooter className="mt-12 p-0  ">
         <Button
+          onClick={handleBookNow}
           size="lg"
           color="white"
           className="custom-btn absolute bottom-2 right-0 left-10 w-3/4 "
           ripple={false}
           fullWidth={true}
         >
-          Buy Now
+          Book Now
         </Button>
       </CardFooter>
     </Card>

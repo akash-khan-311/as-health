@@ -63,7 +63,7 @@ const NavManu = () => {
   };
 
   return (
-    <div className=" text-white py-2 px-4 lg:px-0  lg:py-4 ">
+    <div className="  top-0 text-white py-2 px-4 lg:px-0  lg:py-4 ">
       <Toaster position="top-center" reverseOrder={false} />
       <div className=" container mx-auto flex items-center justify-between ">
         <Typography
@@ -78,7 +78,7 @@ const NavManu = () => {
         {user ? (
           <>
             <p className=" items-center hidden lg:flex">
-              <Button variant="gradient" size="sm" className="capitalize">
+              <Button variant="gradient" size="sm" className="capitalize text-xl">
                 {user.displayName}
               </Button>
               <Tooltip
@@ -91,7 +91,7 @@ const NavManu = () => {
                 <p>
                   <FaSignOutAlt
                     onClick={handleLogOut}
-                    className="text-2xl ml-4 cursor-pointer"
+                    className="text-4xl ml-4 cursor-pointer"
                   />
                 </p>
               </Tooltip>

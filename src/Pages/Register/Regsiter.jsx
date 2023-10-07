@@ -1,13 +1,37 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import NavManu from "../../components/NavMenu/NavManu";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../ContextApi/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
-  const { registerUser, updateNmae } = useContext(AuthContext);
-  const [showPassword, setShowPassword] = useState(false);
+  const { registerUser, updateNmae, loginGoogle, loginGithub } =
+    useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(true);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+
+  const handleGithubLogin = () => {
+    loginGithub()
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.success("Github login Success");
+      })
+      .catch((err) => toast.error(err.message));
+  };
+
+  const handleGoogleLogIn = () => {
+    loginGoogle()
+      .then(() => {
+        navigate(from, { replace: true });
+        toast.success("Login Success");
+      })
+      .catch((err) => toast.error(err.message));
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -48,7 +72,7 @@ const Register = () => {
         const user = result.user;
         toast.success("User Registered Successfully");
         form.reset();
-        console.log(user);
+        navigate(from, { replace: true });
         updateNmae(name)
           .then()
           .catch((error) => {
@@ -63,12 +87,15 @@ const Register = () => {
   return (
     <div className="overflow-hidden">
       <NavManu />
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <Toaster position="top-center" reverseOrder={false} />
       <div
         data-aos="flip-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 my-32 "
+        className="flex flex-col items-center justify-center px-6 py-8 mx-auto  lg:py-0  lg:my-12  "
       >
         <div className="w-full backdrop-blur-sm bg-white/5 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -174,7 +201,10 @@ const Register = () => {
             </form>
             <hr />
             <div className="flex gap-x-2 justify-center w-full items-center ">
-              <div className="flex gap-x-3 items-center backdrop-blur-lg bg-white/20 cursor-pointer px-4 h-12 rounded-lg">
+              <div
+                onClick={handleGoogleLogIn}
+                className="flex gap-x-3 items-center backdrop-blur-lg bg-white/20 cursor-pointer px-4 h-12 rounded-lg"
+              >
                 <p className="text-white">Login with </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +234,10 @@ const Register = () => {
                 </svg>
               </div>
 
-              <div className="flex gap-x-3 items-center backdrop-blur-lg bg-white/20 cursor-pointer px-4  h-12 rounded-lg">
+              <div
+                onClick={handleGithubLogin}
+                className="flex gap-x-3 items-center backdrop-blur-lg bg-white/20 cursor-pointer px-4  h-12 rounded-lg"
+              >
                 <p className="text-white">Login with </p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
