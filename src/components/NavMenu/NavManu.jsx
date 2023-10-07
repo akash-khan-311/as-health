@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  Navbar,
   MobileNav,
   Typography,
   Button,
   IconButton,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
+import "./NavMenu.css";
 
 const NavManu = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -26,12 +26,12 @@ const NavManu = () => {
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink to={"/about"} className="flex items-center">
           About
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink to={"/contact"} className="flex items-center">
           Contact
         </NavLink>
       </Typography>

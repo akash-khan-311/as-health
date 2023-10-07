@@ -17,7 +17,7 @@ const Counter = () => {
               <h2 className="font-custom  text-5xl md:text-6xl lg:text-7xl   text-white">
                 270K
               </h2>
-              <p className="leading-relaxed text-3xl text-color">Users</p>
+              <p className="leading-relaxed text-3xl text-color">Client</p>
             </div>
             <div
               data-aos="fade-down"
@@ -54,9 +54,9 @@ const Counter = () => {
               className="p-4 sm:w-1/4 w-1/2"
             >
               <h2 className="font-custom  text-5xl md:text-6xl lg:text-7xl   text-white">
-                600k
+                24/7
               </h2>
-              <p className="leading-relaxed text-3xl text-color">Products</p>
+              <p className="leading-relaxed text-3xl text-color">Support</p>
             </div>
           </div>
         </div>
