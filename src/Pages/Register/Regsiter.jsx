@@ -1,11 +1,69 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import NavManu from "../../components/NavMenu/NavManu";
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../../ContextApi/AuthProvider";
 
 const Register = () => {
+  const { registerUser, updateNmae } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confrimPassword = form.confirmPassword.value;
+
+    if (name.length === 0) {
+      toast.error("Enter Your Name");
+      return;
+    } else if (email.length === 0) {
+      toast.error("Enter Your Email");
+      return;
+    } else if (password.length === 0) {
+      toast.error("Enter Your Password");
+      return;
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+    ) {
+      toast.error("Enter a Valid Email Adress");
+      return;
+    } else if (!/^(?=.*[A-Za-z0-9])(?=.{7,})/.test(password)) {
+      toast.error("Password Must have Less than 6 Characters");
+      return;
+    } else if (!/^(?=.*[A-Z])/.test(password)) {
+      toast.error("Password Must be a Capital letter");
+      return;
+    } else if (!/^(?=.*[!@#$%^&*])/.test(password)) {
+      toast.error("Paassword Must Have a Special Character");
+    } else if (password !== confrimPassword) {
+      toast.error("Password Does Not Match");
+      return;
+    }
+
+    registerUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("User Registered Successfully");
+        form.reset();
+        console.log(user);
+        updateNmae(name)
+          .then()
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        toast.error("something went wrong");
+        console.log(error.message);
+      });
+  };
   return (
     <div className="overflow-hidden">
       <NavManu />
+      <Toaster position="top-center" reverseOrder={false} />
       <div
         data-aos="flip-right"
         data-aos-easing="ease-out-cubic"
@@ -17,7 +75,11 @@ const Register = () => {
             <h1 className="text-3xl md:text-4xl lg:text-6xl text-center font-bold leading-tight tracking-tight text-color">
               Register
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form
+              onSubmit={handleRegister}
+              className="space-y-4 md:space-y-6"
+              action="#"
+            >
               <div>
                 <label
                   htmlFor="name"
@@ -31,7 +93,6 @@ const Register = () => {
                   id="name"
                   className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Name"
-                  required
                 />
               </div>
               <div>
@@ -43,20 +104,28 @@ const Register = () => {
                   name="email"
                   className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Email"
-                  required
                 />
               </div>
-              <div>
+              <div className="relative">
                 <label className="block mb-2 text-sm font-medium text-white">
                   Password
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "password" : "text"}
                   name="password"
                   placeholder="Password"
-                  className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
+                  className="backdrop-blur-sm  bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                <div
+                  onClick={() => setShowPassword(!showPassword)}
+                  className=""
+                >
+                  {showPassword ? (
+                    <AiOutlineEye className="absolute right-3 bottom-3 text-xl cursor-pointer text-white" />
+                  ) : (
+                    <AiOutlineEyeInvisible className="absolute right-3 bottom-3 text-xl cursor-pointer text-white" />
+                  )}
+                </div>
               </div>
               <div>
                 <label
@@ -66,12 +135,10 @@ const Register = () => {
                   Confirm Password
                 </label>
                 <input
-                  type="password"
-                  name="password"
-                  id="password"
+                  type={showPassword ? "password" : "text"}
+                  name="confirmPassword"
                   placeholder="Confirm Password"
                   className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
                 />
               </div>
               <div className="flex items-center justify-between">

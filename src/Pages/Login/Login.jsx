@@ -1,18 +1,52 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import NavManu from "../../components/NavMenu/NavManu";
 import { Link } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "../../ContextApi/AuthProvider";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const { loginUser } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    if (email.length === 0) {
+      toast.error("Enter Your Email");
+      return;
+    } else if (
+      !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
+    ) {
+      toast.error("Enter a Valid Email Address");
+      return;
+    } else if (password.length === 0) {
+      toast.error("Enter Your Password");
+      return;
+    }
+
+    loginUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        toast.success("user login successfully");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <div className="overflow-hidden">
       <NavManu />
-
+      <Toaster position="top-center" reverseOrder={false} />
       <div
         data-aos="flip-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-
         className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 "
       >
         <div className="w-full backdrop-blur-sm bg-white/5 rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -20,7 +54,11 @@ const Login = () => {
             <h1 className="text-3xl md:text-4xl lg:text-6xl text-center font-bold leading-tight tracking-tight text-color">
               Login
             </h1>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form
+              onSubmit={handleLogin}
+              className="space-y-4 md:space-y-6"
+              action="#"
+            >
               <div>
                 <label className="block mb-2 text-sm font-medium text-white">
                   Your email
@@ -30,23 +68,28 @@ const Login = () => {
                   name="email"
                   className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Email"
-                  required
                 />
               </div>
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-white"
-                >
+              <div className="relative">
+                <label className="block mb-2 text-sm font-medium text-white">
                   Password
                 </label>
                 <input
-                  type="password"
+                  type={showPassword ? "password" : "text"}
                   name="password"
                   placeholder="Password"
-                  className="backdrop-blur-sm bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required
+                  className="backdrop-blur-sm  bg-white/10 border   sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5   text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                <div
+                  onClick={() => setShowPassword(!showPassword)}
+                  className=""
+                >
+                  {showPassword ? (
+                    <AiOutlineEye className="absolute right-3 bottom-3 text-xl cursor-pointer text-white" />
+                  ) : (
+                    <AiOutlineEyeInvisible className="absolute right-3 bottom-3 text-xl cursor-pointer text-white" />
+                  )}
+                </div>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-start">

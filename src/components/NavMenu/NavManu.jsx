@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { FaSignOutAlt } from "react-icons/fa";
 import {
   MobileNav,
   Typography,
   Button,
   IconButton,
+  Avatar,
+  Tooltip,
 } from "@material-tailwind/react";
 import { Link, NavLink } from "react-router-dom";
 import "./NavMenu.css";
+import { AuthContext } from "../../ContextApi/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const NavManu = () => {
-  const [openNav, setOpenNav] = React.useState(false);
+  const [openNav, setOpenNav] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener(
       "resize",
       () => window.innerWidth >= 960 && setOpenNav(false)
@@ -48,9 +54,18 @@ const NavManu = () => {
     </ul>
   );
 
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => toast.success("Log Out Successfully"))
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
-    <div className=" text-white py-2 px-4 lg:px-0  lg:py-4">
-      <div className=" container mx-auto flex items-center justify-between">
+    <div className=" text-white py-2 px-4 lg:px-0  lg:py-4 ">
+      <Toaster position="top-center" reverseOrder={false} />
+      <div className=" container mx-auto flex items-center justify-between ">
         <Typography
           as="a"
           className="mr-4 cursor-pointer py-1.5 font-bold font-custom text-4xl"
@@ -59,16 +74,45 @@ const NavManu = () => {
             <span className="text-color">AS</span> Health
           </Link>
         </Typography>
-        <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <Link className="hover:underline" to={"/login"}>
-            Login
-          </Link>{" "}
-          /{" "}
-          <Link className="hover:underline" to={"/register"}>
-            Register
-          </Link>
-        </Button>
+        <div className="hidden lg:block ">{navList}</div>
+        {user ? (
+          <>
+            <p className=" items-center hidden lg:flex">
+              <Button variant="gradient" size="sm" className="capitalize">
+                {user.displayName}
+              </Button>
+              <Tooltip
+                content="Log Out"
+                animate={{
+                  mount: { scale: 1, y: 0 },
+                  unmount: { scale: 0, y: 25 },
+                }}
+              >
+                <p>
+                  <FaSignOutAlt
+                    onClick={handleLogOut}
+                    className="text-2xl ml-4 cursor-pointer"
+                  />
+                </p>
+              </Tooltip>
+            </p>
+          </>
+        ) : (
+          <Button
+            variant="gradient"
+            size="sm"
+            className="hidden lg:inline-block"
+          >
+            <Link className="hover:underline" to={"/login"}>
+              Login
+            </Link>{" "}
+            /{" "}
+            <Link className="hover:underline" to={"/register"}>
+              Register
+            </Link>
+          </Button>
+        )}
+
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -110,12 +154,31 @@ const NavManu = () => {
       <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <Link to={"/login"}>Login</Link>
-          </Button>
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-           <Link to={'/register'}>Register</Link>
-          </Button>
+          {user ? (
+            <>
+              <Button variant="gradient" size="sm" fullWidth className="mb-2">
+                {user.displayName}
+              </Button>
+              <Button
+                onClick={handleLogOut}
+                variant="gradient"
+                size="sm"
+                fullWidth
+                className="mb-2"
+              >
+                Log Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button variant="gradient" size="sm" fullWidth className="mb-2">
+                <Link to={"/login"}>Login</Link>
+              </Button>
+              <Button variant="gradient" size="sm" fullWidth className="mb-2">
+                <Link to={"/register"}>Register</Link>
+              </Button>
+            </>
+          )}
         </div>
       </MobileNav>
     </div>
