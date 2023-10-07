@@ -1,11 +1,15 @@
 li .active {
-  border-bottom: 4px solid red;
-  transition: ease-in-out 0.3s;
-  -webkit-transition: ease-in-out 0.3s;
-  -moz-transition: ease-in-out 0.3s;
-  -ms-transition: ease-in-out 0.3s;
-  -o-transition: ease-in-out 0.3s;
+  border-bottom: 4px transparent;
+  border-style: solid;
+  border-image: linear-gradient(
+    to right,
+    #642b73 0%,
+    #c6426e 51%,
+    #642b73 100%
+  );
+  border-image-slice: 2;
 }
-li .active:hover {
-  border-bottom: 4px solid red;
+
+.nav {
+  border-bottom: 4px solid transparent !important;
 }

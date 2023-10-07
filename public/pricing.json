@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "package_name": "Standard",
     "price_per_month": 30,
     "benefits": [
@@ -9,6 +10,7 @@
     ]
   },
   {
+    "id": 2,
     "package_name": "Premium",
     "price_per_month": 50,
     "benefits": [
@@ -20,6 +22,7 @@
     ]
   },
   {
+    "id": 3,
     "package_name": "VIP",
     "price_per_month": 80,
     "benefits": [

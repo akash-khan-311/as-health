@@ -7,6 +7,10 @@ import Register from "../Pages/Register/Regsiter";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import About from "../Pages/About/About";
 import Contact from "../Pages/Contact/Contact";
+import Pricing from "../components/Pricing/Pricing";
+import DashBoard from "../Pages/DashBoard/DashBoard";
+import Blogs from "../Pages/Blogs/Blogs";
+import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 
 export const Router = createBrowserRouter([
   {
@@ -19,10 +23,13 @@ export const Router = createBrowserRouter([
         element: <ServiceDetails />,
         loader: () => fetch("/data.json"),
       },
-      { path: "/about", element: <About /> },
+      { path: "/pricing", element: <Pricing /> },
       { path: "/contact", element: <Contact /> },
       { path: "/login", element: <Login /> },
+      { path: "/dashboard", element: <DashBoard /> },
+      { path: "/blogs", element: <Blogs /> },
       { path: "/register", element: <Register /> },
     ],
   },
+  { path: "*", element: <NotFoundPage /> },
 ]);

@@ -21,17 +21,27 @@ const NavManu = () => {
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/"} className="flex items-center">
+        <NavLink to={"/"} className="flex items-center  nav">
           Home
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/about"} className="flex items-center">
-          About
+        <NavLink to={"/pricing"} className="flex items-center nav">
+         Pricing
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/contact"} className="flex items-center">
+        <NavLink to={"/dashboard"} className="flex items-center nav">
+          Dashboard
+        </NavLink>
+      </Typography>
+      <Typography as="li" variant="lg" className="p-1 font-normal">
+        <NavLink to={"/blogs"} className="flex items-center nav">
+          Blogs
+        </NavLink>
+      </Typography>
+      <Typography as="li" variant="lg" className="p-1 font-normal">
+        <NavLink to={"/contact"} className="flex items-center nav">
           Contact
         </NavLink>
       </Typography>
@@ -46,7 +56,7 @@ const NavManu = () => {
           className="mr-4 cursor-pointer py-1.5 font-bold font-custom text-4xl"
         >
           <Link to={"/"}>
-            <span className="text-color">AS</span> Event
+            <span className="text-color">AS</span> Health 
           </Link>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
