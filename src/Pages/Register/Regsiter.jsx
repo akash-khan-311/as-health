@@ -187,7 +187,7 @@ const Register = () => {
                 </div>
               </div>
               <button type="submit" className=" custom-btn w-full">
-                Sign in
+                Register
               </button>
               <p className="text-sm font-light text-white ">
                 Already have account ?{" "}

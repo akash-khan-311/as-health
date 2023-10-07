@@ -142,7 +142,7 @@ const Login = () => {
                 </a>
               </div>
               <button type="submit" className=" custom-btn w-full">
-                Sign in
+                log in
               </button>
               <p className="text-sm font-light text-white ">
                 Don’t have an account yet?{" "}
@@ -150,7 +150,7 @@ const Login = () => {
                   to="/register"
                   className="font-medium text-primary-600 hover:underline dark:text-primary-500 "
                 >
-                  Sign up
+                  Register
                 </Link>
               </p>
             </form>
