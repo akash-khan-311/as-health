@@ -16,15 +16,19 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const loginGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
   const loginGithub = () => {
+    setLoading(true);
     return signInWithPopup(auth, githubProvider);
   };
 
   const registerUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
   const updateNmae = (name) => {
@@ -33,17 +37,19 @@ const AuthProvider = ({ children }) => {
     });
   };
   const loginUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
   useEffect(() => {
     const unSubcribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("user paichi", currentUser);
+      setLoading(false);
     });
     return () => unSubcribe();
   }, []);
@@ -56,6 +62,7 @@ const AuthProvider = ({ children }) => {
     loginUser,
     updateNmae,
     logOut,
+    loading
   };
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };

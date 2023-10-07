@@ -11,6 +11,7 @@ import Pricing from "../components/Pricing/Pricing";
 import DashBoard from "../Pages/DashBoard/DashBoard";
 import Blogs from "../Pages/Blogs/Blogs";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
+import PrivateRoute from "./PrivateRoute";
 
 export const Router = createBrowserRouter([
   {
@@ -20,14 +21,32 @@ export const Router = createBrowserRouter([
       { path: "/", element: <Home />, loader: () => fetch("/data.json") },
       {
         path: "/service/:id",
-        element: <ServiceDetails />,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch("/data.json"),
       },
       { path: "/pricing", element: <Pricing /> },
       { path: "/contact", element: <Contact /> },
       { path: "/login", element: <Login /> },
-      { path: "/dashboard", element: <DashBoard /> },
-      { path: "/blogs", element: <Blogs /> },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <DashBoard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blogs",
+        element: (
+          <PrivateRoute>
+            <Blogs />{" "}
+          </PrivateRoute>
+        ),
+      },
       { path: "/register", element: <Register /> },
     ],
   },

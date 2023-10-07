@@ -2,13 +2,16 @@ import React, { useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import NavManu from "../../components/NavMenu/NavManu";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "../../ContextApi/AuthProvider";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -34,6 +37,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         toast.success("user login successfully");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         toast.error(error.message);
