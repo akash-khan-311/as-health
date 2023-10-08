@@ -47,6 +47,11 @@ const NavManu = () => {
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
+        <NavLink to={"/orders"} className="flex items-center nav">
+          Orders
+        </NavLink>
+      </Typography>
+      <Typography as="li" variant="lg" className="p-1 font-normal">
         <NavLink to={"/contact"} className="flex items-center nav">
           Contact
         </NavLink>

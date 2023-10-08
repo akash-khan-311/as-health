@@ -9,6 +9,25 @@ li .active {
   );
   border-image-slice: 2;
 }
+li a {
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+li a:hover {
+  border-bottom: 4px transparent;
+  border-style: solid;
+  border-image: linear-gradient(
+    to right,
+    #642b73 0%,
+    #c6426e 51%,
+    #642b73 100%
+  );
+  border-image-slice: 2;
+}
 
 .nav {
   border-bottom: 4px solid transparent !important;

@@ -13,6 +13,7 @@ import Blogs from "../Pages/Blogs/Blogs";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import PrivateRoute from "./PrivateRoute";
 import BlogsDetails from "../Pages/BlogDetails/BlogsDetails";
+import Orders from "../Pages/Orders/Orders";
 
 export const Router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ export const Router = createBrowserRouter([
         loader: () => fetch("/data.json"),
       },
       { path: "/pricing", element: <Pricing /> },
+      {
+        path: "/orders",
+        element: (
+          <PrivateRoute>
+            <Orders />
+          </PrivateRoute>
+        ),
+      },
       { path: "/contact", element: <Contact /> },
       { path: "/login", element: <Login /> },
       {
