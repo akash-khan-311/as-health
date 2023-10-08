@@ -3,7 +3,6 @@ import PricingCard from "../PricingCard/PricingCard";
 import NavManu from "../NavMenu/NavManu";
 import { Helmet } from "react-helmet";
 
-
 const Pricing = () => {
   const [pricings, setPricings] = useState([]);
   useEffect(() => {
@@ -21,8 +20,11 @@ const Pricing = () => {
       <div className="container mx-auto">
         <div className="">
           <h2
-            data-aos="fade-down"
-            className="text-4xl md:text-5xl lg:text-6xl text-white font-semibold text-center"
+            data-aos="flip-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            className="text-4xl md:text-5xl lg:text-6xl text-color font-semibold text-center"
           >
             Get Our Best Packege
           </h2>

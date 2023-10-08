@@ -12,6 +12,7 @@ import DashBoard from "../Pages/DashBoard/DashBoard";
 import Blogs from "../Pages/Blogs/Blogs";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import PrivateRoute from "./PrivateRoute";
+import BlogsDetails from "../Pages/BlogDetails/BlogsDetails";
 
 export const Router = createBrowserRouter([
   {
@@ -41,11 +42,17 @@ export const Router = createBrowserRouter([
       },
       {
         path: "/blogs",
+        element: <Blogs />,
+        loader: () => fetch("/blogs.json"),
+      },
+      {
+        path: "/blog/:id",
         element: (
           <PrivateRoute>
-            <Blogs />{" "}
+            <BlogsDetails />
           </PrivateRoute>
         ),
+        loader: () => fetch("/blogs.json"),
       },
       { path: "/register", element: <Register /> },
     ],

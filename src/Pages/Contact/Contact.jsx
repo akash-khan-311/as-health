@@ -9,12 +9,22 @@ const Contact = () => {
       <Helmet>
         <title>Contact</title>
       </Helmet>
+      <h2
+        data-aos="flip-right"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="text-4xl md:text-5xl lg:text-6xl text-center text-color font-semibold"
+      >
+        Contact
+      </h2>
       <section className="text-gray-600 body-font relative">
         <div className="container px-5 py-24 mx-auto flex  flex-col-reverse lg:flex-row overflow-hidden md:space-y-5">
           <div
             data-aos="fade-right"
             data-aos-offset="200"
-            data-aos-delay="50"
+            data-aos-delay="500"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out"
             className="lg:w-2/3 md:w-full bg-gray-300 w-full rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative"
