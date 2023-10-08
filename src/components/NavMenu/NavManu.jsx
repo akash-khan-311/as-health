@@ -36,11 +36,7 @@ const NavManu = () => {
           Pricing
         </NavLink>
       </Typography>
-      <Typography as="li" variant="lg" className="p-1 font-normal">
-        <NavLink to={"/dashboard"} className="flex items-center nav">
-          Dashboard
-        </NavLink>
-      </Typography>
+
       <Typography as="li" variant="lg" className="p-1 font-normal">
         <NavLink to={"/blogs"} className="flex items-center nav">
           Blogs
@@ -49,6 +45,11 @@ const NavManu = () => {
       <Typography as="li" variant="lg" className="p-1 font-normal">
         <NavLink to={"/orders"} className="flex items-center nav">
           Orders
+        </NavLink>
+      </Typography>
+      <Typography as="li" variant="lg" className="p-1 font-normal">
+        <NavLink to={"/dashboard"} className="flex items-center nav">
+          Dashboard
         </NavLink>
       </Typography>
       <Typography as="li" variant="lg" className="p-1 font-normal">
@@ -83,7 +84,11 @@ const NavManu = () => {
         {user ? (
           <>
             <p className=" items-center hidden lg:flex">
-              <Button variant="gradient" size="sm" className="capitalize text-xl">
+              <Button
+                variant="gradient"
+                size="sm"
+                className="capitalize text-xl"
+              >
                 {user.displayName}
               </Button>
               <Tooltip
