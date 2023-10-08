@@ -19,7 +19,7 @@ const BlogCard = ({ blog }) => {
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
       data-aos-delay="500"
-      className="text-white body-font"
+      className="text-white body-font backdrop-blur-sm bg-white/5"
     >
       <div className="container mx-auto">
         <div className="">

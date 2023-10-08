@@ -87,7 +87,7 @@ const NavManu = () => {
               <Button
                 variant="gradient"
                 size="sm"
-                className="capitalize text-xl"
+                className="capitalize text-sm"
               >
                 {user.displayName}
               </Button>
