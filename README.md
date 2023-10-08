@@ -1,9 +1,12 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* Site Name : AS Health
+* Site Link : https://as-health.netlify.app/
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# b8a9-event-management-akash-khan-311
+
+# Add at least 5 Project Features
+* People will know How to stay Fit
+* Specific Card and blogs if needed
+* Some places cannot be accessed without login
+* Login Register Method 
+* Read Blogs and Clickable on blogs card
